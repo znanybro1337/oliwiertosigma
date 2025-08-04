@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Palion jest najlepszy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #4CAF50;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      color: white;
+    }
+    .notatka {
+      background-color: #ffffff;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      color: #000;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    ul {
+      font-size: 18px;
+      padding-left: 20px;
+    }
+    button {
+      margin: 10px 5px 0 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #muzykaBtn {
+      background-color: #2e7d32;
+      color: white;
+    }
+    #grajBtn {
+      background-color: #1e88e5;
+      color: white;
+    }
+    .naglowek {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="naglowek">Palion jest najlepszy</div>
+
+  <div class="notatka">
+    <h1>Top 3 Najszybsze Auta na Świecie</h1>
+    <ul>
+      <li>1. Bugatti Chiron Super Sport 300+</li>
+      <li>2. Hennessey Venom F5</li>
+      <li>3. Koenigsegg Jesko Absolut</li>
+    </ul>
+
+    <button id="muzykaBtn">Włącz muzykę</button>
+    <button id="grajBtn">Graj w gry</button>
+  </div>
+
+  <audio id="muzyka" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-epic.mp3" type="audio/mpeg">
+    Twoja przeglądarka nie obsługuje odtwarzacza audio.
+  </audio>
+
+  <script>
+    const muzyka = document.getElementById('muzyka');
+    const muzykaBtn = document.getElementById('muzykaBtn');
+    let graMuzyka = false;
+
+    muzykaBtn.addEventListener('click', () => {
+      if (!graMuzyka) {
+        muzyka.play();
+        muzykaBtn.textContent = 'Wyłącz muzykę';
+      } else {
+        muzyka.pause();
+        muzykaBtn.textContent = 'Włącz muzykę';
+      }
+      graMuzyka = !graMuzyka;
+    });
+
+    document.getElementById('grajBtn').addEventListener('click', () => {
+      window.open('https://poki.com', '_blank');
+    });
+  </script>
+
+</body>
+</html>
